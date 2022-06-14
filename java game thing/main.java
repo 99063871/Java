@@ -4,10 +4,26 @@ import java.util.Scanner;
 
 
 class Main {
+  public static String YesNoInput = "schaap";
   static void click(){
-    System.out.println("Klik om verder te gaan...");
+    System.out.println("Klik op enter om verder te gaan...");
     Scanner a = new Scanner(System.in);
     String ab = a.nextLine();
+  }
+  static void YesNo(){
+    Scanner b = new Scanner(System.in);
+    String bb = b.nextLine();
+    if(bb.equalsIgnoreCase("ja")){
+      YesNoInput = "ja";
+      
+    }
+    else if(bb.equalsIgnoreCase("nee")){
+     YesNoInput = "nee";
+    }
+    else{
+      YesNo();
+    }
+    
   }
 
   static void begin() {
@@ -30,11 +46,9 @@ class Main {
   System.out.println("Wie kan dat nou weer zijn? denk je terwijl je naar de deur loopt.");
   click();
   System.out.println("Doe je de deur open? Ja/Nee");
-  click();
-  Scanner deur = new Scanner(System.in);
-  String deura = deur.nextLine();
-  if(deura == "j"){
-    System.out.println("hlaoo");
+  YesNo();
+  if(YesNoInput.equalsIgnoreCase("ja")){
+    System.out.println("YESSSS");
   }
   }
 
@@ -42,23 +56,3 @@ class Main {
   begin();
   }
 }
-
-
-
-
-
-// class Main {
-//   static void myMethod() {
-//     System.out.println("I just got executed!");
-//   }
-
-//   public static void main(String[] args) {
-//     myMethod();
-//     myMethod();
-//     myMethod();
-//   }
-// }
-
-// // I just got executed!
-// // I just got executed!
-// // I just got executed!
